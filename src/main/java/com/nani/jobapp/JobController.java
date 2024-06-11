@@ -1,29 +1,30 @@
 package com.nani.jobapp;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class JobController {
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String home() {
         System.out.println("Home called");
         return "index";
     }
 
-    @RequestMapping("/viewalljobs")
+    @GetMapping("/viewalljobs")
     public String jobs() {
         System.out.println("viewalljobs called");
         return "viewalljobs";
     }
-    @RequestMapping("/addjob")
+    @GetMapping("/addjob")
     public String addjob() {
         System.out.println("addjob called");
         return "addjob";
     }
-    @RequestMapping("/handleForm")
-    public String handleform() {
+    @PostMapping("/handleForm")
+    public String handleform(JobPost jobPost) {
         System.out.println("handleform called");
         return "sucess";
     }

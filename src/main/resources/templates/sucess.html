@@ -55,25 +55,23 @@
         <div class="col-md-6">
             <div class="card border-dark bg-dark text-white">
                 <div class="card-body">
-                    <h5 class="card-title"><!-- ${jobPost.postProfile} --></h5>
+                    <h5 class="card-title" th:text="${jobPost.postProfile}"></h5>
                     <p class="card-text">
                         <strong>Job-Id:</strong>
-                        <!-- ${jobPost.postId} -->
+                        <span th:text="${jobPost.postId}"></span>
                     </p>
                     <p class="card-text">
                         <strong>Description:</strong>
-                        <!-- ${jobPost.postDesc} -->
+                        <span th:text="${jobPost.postDesc}"></span>
                     </p>
                     <p class="card-text">
                         <strong>Experience Required:</strong>
-                        <!-- ${jobPost.reqExperience} years -->
+                        <span th:text="${jobPost.reqExperience} + ' years'"></span>
                     </p>
                     <p class="card-text">
                         <strong>Tech Stack Required:</strong>
                         <ul>
-                            <!-- <c:forEach var="tech" items="${jobPost.postTechStack}">
-                                <li>${tech}</li>
-                            </c:forEach> -->
+                            <li th:each="tech : ${jobPost.postTechStack}" th:text="${tech}"></li>
                         </ul>
                     </p>
                 </div>
